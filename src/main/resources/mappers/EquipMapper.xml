@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjy.orm.mybatis.mapper.EquipMapper">
+
+    <insert id="saveEquip">
+        INSERT INTO `tb_equip` (`id`,
+                                `name`,
+                                `model`,
+                                `email`,
+                                `manufactor`,
+                                `price`,
+                                `others`)
+        VALUES (#{equipment.id},
+                #{equipment.name},
+                #{equipment.model},
+                #{equipment.email},
+                #{equipment.manufactor},
+                #{equipment.price},
+                #{equipment.others})
+    </insert>
+
+    <delete id="deleteById">
+        DELETE
+        FROM `tb_equip`
+        WHERE `id` = #{id}
+    </delete>
+</mapper>
